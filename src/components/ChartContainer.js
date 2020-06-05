@@ -291,6 +291,17 @@ const ChartContainer = forwardRef(
               "isAncestorsCollapsed"
             );
           });
+      },
+      zoomReset: () => {
+        setTransform("");
+      },
+      zoomPositive: () => {
+        let value = { deltaY: -1};
+        zoomHandler(value);
+      },
+      zoomNegative: () => {
+        let value = { deltaY: 1};
+        zoomHandler(value);
       }
     }));
 
