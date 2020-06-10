@@ -1,5 +1,5 @@
 {
-  "name": "@dabeng/react-orgchart",
+  "name": "@inthememory/react-orgchart",
   "version": "1.0.0",
   "main": "./dist/ChartContainer.js",
   "files": [
@@ -8,7 +8,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dabeng/react-orgchart.git"
+    "url": "https://github.com/MatthieuLPro/orgchartV2"
   },
   "keywords": [
     "react",
@@ -20,10 +20,10 @@
     "tree-like",
     "tree-view"
   ],
-  "author": "dabeng <dabeng413@gmail.com>",
+  "author": "dabeng <dabeng413@gmail.com> + inthememory",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dabeng/react-orgchart/issues"
+    "url": "https://github.com/MatthieuLPro/orgchartV2/issues"
   },
   "babel": {
     "presets": [
