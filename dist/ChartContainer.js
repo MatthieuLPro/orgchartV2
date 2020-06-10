@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import PropTypes from "prop-types";
 import { selectNodeService } from "./service";
-import JSONDigger from "json-digger";
+import JSONDigger from "json-digger/src/index";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import ChartNode from "./ChartNode";
