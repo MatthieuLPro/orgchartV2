@@ -31,10 +31,7 @@ const ChartNode = ({
   const node = useRef();
 
   const [isChildrenCollapsed, setIsChildrenCollapsed] = useState(false);
-  const [topEdgeExpanded, setTopEdgeExpanded] = useState();
-  const [rightEdgeExpanded, setRightEdgeExpanded] = useState();
   const [bottomEdgeExpanded, setBottomEdgeExpanded] = useState();
-  const [leftEdgeExpanded, setLeftEdgeExpanded] = useState();
   const [allowedDrop, setAllowedDrop] = useState(false);
   const [selected, setSelected] = useState(false);
 
@@ -96,17 +93,11 @@ const ChartNode = ({
         node.parentNode.children
     ).some(item => item.classList.contains("hidden"));
 
-    setTopEdgeExpanded(!isAncestorsCollapsed);
-    setRightEdgeExpanded(!isSiblingsCollapsed);
-    setLeftEdgeExpanded(!isSiblingsCollapsed);
     setBottomEdgeExpanded(!isChildrenCollapsed);
   };
 
   const removeArrows = () => {
-    setTopEdgeExpanded(undefined);
-    setRightEdgeExpanded(undefined);
     setBottomEdgeExpanded(undefined);
-    setLeftEdgeExpanded(undefined);
   };
 
   const toggleAncestors = actionNode => {
@@ -140,12 +131,6 @@ const ChartNode = ({
         toggleAncestors(node);
       }
     }
-  };
-
-  const topEdgeClickHandler = e => {
-    e.stopPropagation();
-    setTopEdgeExpanded(!topEdgeExpanded);
-    toggleAncestors(e.target.closest("li"));
   };
 
   const bottomEdgeClickHandler = e => {
@@ -185,13 +170,6 @@ const ChartNode = ({
     if (isAncestorsCollapsed) {
       toggleAncestors(actionNode);
     }
-  };
-
-  const hEdgeClickHandler = e => {
-    e.stopPropagation();
-    setLeftEdgeExpanded(!leftEdgeExpanded);
-    setRightEdgeExpanded(!rightEdgeExpanded);
-    toggleSiblings(e.target.closest("li"));
   };
 
   const filterAllowedDropNodes = id => {
@@ -266,16 +244,16 @@ const ChartNode = ({
           )}
           {collapsible &&
           datasource.relationship &&
-          datasource.relationship.charAt(0) === "1" && (
+          datasource.relationship.charAt(2) === "1" && (
               <i
-                  className={`oc-edge verticalEdge topEdge oci ${
-                      topEdgeExpanded === undefined
+                  className={`oc-edge verticalEdge bottomEdge oci ${
+                      bottomEdgeExpanded === undefined
                           ? ""
-                          : topEdgeExpanded
-                          ? "oci-chevron-down"
-                          : "oci-chevron-up"
+                          : bottomEdgeExpanded
+                          ? "oci-chevron-up"
+                          : "oci-chevron-down"
                   }`}
-                  onClick={topEdgeClickHandler}
+                  onClick={bottomEdgeClickHandler}
               />
           )}
         </div>
