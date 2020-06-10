@@ -277,7 +277,7 @@ const ChartNode = ({
                   }`}
                   onClick={topEdgeClickHandler}
               />
-          )
+          )}
         </div>
         {datasource.children && datasource.children.length > 0 && (
             <ul className={isChildrenCollapsed ? "hidden" : ""}>
