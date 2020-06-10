@@ -277,47 +277,7 @@ const ChartNode = ({
                   }`}
                   onClick={topEdgeClickHandler}
               />
-          )}
-          {collapsible &&
-          datasource.relationship &&
-          datasource.relationship.charAt(1) === "1" && (
-              <>
-                <i
-                    className={`oc-edge horizontalEdge rightEdge oci ${
-                        rightEdgeExpanded === undefined
-                            ? ""
-                            : rightEdgeExpanded
-                            ? "oci-chevron-left"
-                            : "oci-chevron-right"
-                    }`}
-                    onClick={hEdgeClickHandler}
-                />
-                <i
-                    className={`oc-edge horizontalEdge leftEdge oci ${
-                        leftEdgeExpanded === undefined
-                            ? ""
-                            : leftEdgeExpanded
-                            ? "oci-chevron-right"
-                            : "oci-chevron-left"
-                    }`}
-                    onClick={hEdgeClickHandler}
-                />
-              </>
-          )}
-          {collapsible &&
-          datasource.relationship &&
-          datasource.relationship.charAt(2) === "1" && (
-              <i
-                  className={`oc-edge verticalEdge bottomEdge oci ${
-                      bottomEdgeExpanded === undefined
-                          ? ""
-                          : bottomEdgeExpanded
-                          ? "oci-chevron-up"
-                          : "oci-chevron-down"
-                  }`}
-                  onClick={bottomEdgeClickHandler}
-              />
-          )}
+          )
         </div>
         {datasource.children && datasource.children.length > 0 && (
             <ul className={isChildrenCollapsed ? "hidden" : ""}>
